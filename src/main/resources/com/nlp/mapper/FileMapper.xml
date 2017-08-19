@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.nlp.mapper.FileMapper">
+    <resultMap id="BaseResultMap" type="com.nlp.model.Text">
+        <result column="text_name" jdbcType="VARCHAR" property="text_name"/>
+        <result column="text_path" jdbcType="VARCHAR" property="text_path"/>
+    </resultMap>
+    <insert id="saveFile" parameterType="com.nlp.model.Text"  useGeneratedKeys="true" keyProperty="id" >
+        INSERT INTO Text (text_name,text_paht)
+        VALUES (#{text_name},#{text_path})
+    </insert>
+</mapper>
